@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+* {
+    box-sizing: border-box; /* include margin, border, and padding in size */
+    font-family: "Lucida Sans", sans-serif;
+}
+
+.flex-container {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap; /* Safari 6.1+ */
+    flex-wrap: wrap;
+}
+
+/* Phones: */
+.phone-12-cols {width: 100%;}
+
+/* Desktop: */
+@media only screen and (min-width: 750px) {
+    .desktop-1-cols {width: 8.33%;}
+    .desktop-2-cols {width: 16.66%;}
+    .desktop-3-cols {width: 25%;}
+    .desktop-4-cols {width: 33.33%;}
+    .desktop-5-cols {width: 41.66%;}
+    .desktop-6-cols {width: 50%;}
+    .desktop-7-cols {width: 58.33%;}
+    .desktop-8-cols {width: 66.66%;}
+    .desktop-9-cols {width: 75%;}
+    .desktop-10-cols {width: 83.33%;}
+    .desktop-11-cols {width: 91.66%;}
+    .desktop-12-cols {width: 100%;}
+}
+
+.logo {
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+
+
+.content {
+    padding-left: 20px;
+    padding-right: 20px;
+	text-align: center;
+	color: #07a9fc;
+}
+
+.menu li {
+    padding: 8px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    background-color: #0052af;
+    color: #f1f1f1;
+}
+
+.menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    font-size: 16pt;
+}
+
+.menu li:hover {
+    background-color: #07a9fc;
+}
+
+.logoimg {
+	max-height:100%
+}
+
+.iconimg {
+	max-height:50px
+}
+
+
+.aside > div {
+    height: 50px;
+    padding: 8px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    background-color :#008000;
+    color: #f1f1f1;
+}
+
+table{
+	margin: 0 auto;
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+td, th {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 16px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+.content_table{
+	 margin-top: 6px;
+}
+
+.content_table li {
+    padding: 8px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    background-color: #0052af;
+    color: #f1f1f1;
+}
+
+.content_table ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.content_table li:hover {
+    background-color: #07a9fc;
+}
+
+.group
+{
+	padding: 8px;
+	margin-top: 30px;
+    margin-bottom: 30px;
+	border: 3px solid #07a9fc;
+}
+
+.groupbutton ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.groupbutton li
+{
+	background-color: #0052af;
+	color:white;
+	height:40px;
+	justify-content: center;
+    align-items: center;
+	padding: 8px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+
+.groupbutton li:hover {
+    background-color: #07a9fc;
+}
+
+.groupinfo ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.groupinfo li
+{
+	height:40px;
+	justify-content: center;
+    align-items: center;
+	padding: 8px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+
+.groupinfo
+{
+	margin-top: 30px;
+}
+
+
+</style>
+<script>
+function goToGroup()
+{
+	var bestaetigung = window.confirm('Möchten Sie der Gruppe beitreten?');
+	//Nach Betätigung des Buttons
+	if(bestaetigung) {
+	  window.location.href = 'detailgroup02.html'
+	}
+	else {
+	  //Abbrechen wurde gedrückt
+	}
+}
+</script>
+</head>
+<body>
+<div class="flex-container">
+	<div class="logo desktop-3-cols phone-12-cols">	
+		<a style="height: 120px;" href="../index.html">
+			<img class="logoimg" src="../img/Logo2.png" alt="Logo Study Radar" ></img>
+		</a>
+	</div>
+	<div class="content desktop-6-cols phone-12-cols">
+		<h1>Lerngruppe</h1>
+	</div>
+	<div class="aside desktop-3-cols phone-12-cols">
+        <img class="iconimg" src="../img/calendar.png" alt="Meine Termine"></img>
+		<a href="search01.html">
+			<img class="iconimg" src="../img/suche.jpg" alt="Suchen"></img>
+		</a>		
+		<img class="iconimg" src="../img/einstellungen.png" alt="Einstellungen"></img>
+		<img class="iconimg" src="../img/logofficon.png" alt="Abmelden"></img>
+    </div>
+</div>
+
+<div class="flex-container">
+
+	<div class="menu desktop-3-cols phone-12-cols">        
+        <ul>
+			<li>Termine</li>
+			<li>Offene Anfragen</li>
+			<li>Vorschläge</li>
+			<li>Notizen</li>
+		</ul>
+    </div>
+	
+	<div class="content desktop-9-cols phone-12-cols">
+		<div class="flex-container">
+			<div class="group desktop-12-cols phone-12-cols">
+				<h3>Programmieren I</h3>
+			</div>
+			<div class="group desktop-6-cols phone-12-cols">
+				<div style="text-align: left">
+					Mitglieder:
+				</div>
+				<div style="text-align: left">
+					<ul>
+						<li>Matthes P.</li>
+						<li>Christiane F.</li>
+						<li>Alexander J.</li>
+						<li>Trista M.</li>
+					</ul>
+				</div>
+			</div>
+			<div  class="group desktop-6-cols phone-12-cols">
+				<div class="groupbutton">
+					<ul>
+						<li onclick="goToGroup()">Lerngruppe beitreten</li>
+					</ul>					
+				</div>
+				<div class="groupinfo">
+					<ul>
+						<li>Treffen Dienstags 15:30 Uhr</li>
+						<li>Lerngruppe beitreten um Kontaktdetails zu sehen</li>
+					</ul>	
+				</div>
+			</div>
+			<div class="group desktop-12-cols phone-12-cols">
+				<div style="text-align: left">
+					Info:
+				</div>
+				<div style="text-align: left">
+					Moin moin, wir sind eine offene Gruppe voller Erstsemester und würden uns über jeden neuen Lernparter freuen.
+				</div>
+			</div>
+		</div>
+    </div>
+
+</div>
+</body>
+</html>
