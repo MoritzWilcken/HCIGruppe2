@@ -127,6 +127,53 @@ tr:nth-child(even) {
     background-color: #07a9fc;
 }
 
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  height: 170px;
+  padding: 20px;
+  border: 1px solid #888;
+}
+
+.message-popup {
+  text-align: center;
+}
+
+.btn-popup-red {
+  background-color: #FF0000;
+  color: white;
+  font-size: 16px;
+  border: none;
+  padding: auto;
+  margin: auto;
+}
+
+.btn-popup-green {
+  background-color: #3ADF00;
+  color: white;
+  font-size: 16px;
+  border: none;
+  padding: auto;
+  margin: auto;
+}
+
+
 .group
 {
 	padding: 8px;
@@ -180,19 +227,7 @@ tr:nth-child(even) {
 
 
 </style>
-<script>
-function goToGroup()
-{
-	var bestaetigung = window.confirm('Möchten Sie der Gruppe beitreten?');
-	//Nach Betätigung des Buttons
-	if(bestaetigung) {
-	  window.location.href = 'detailgroup02.html'
-	}
-	else {
-	  //Abbrechen wurde gedrückt
-	}
-}
-</script>
+
 </head>
 <body>
 <div class="flex-container">
@@ -210,8 +245,28 @@ function goToGroup()
 			<img class="iconimg" src="../img/suche.png" alt="Suchen"></img>
 		</a>		
 		<img class="iconimg" src="../img/einstellungen.png" alt="Einstellungen"></img>
-		<img class="iconimg" src="../img/logofficon.png" alt="Abmelden"></img>
+		<!-- Trigger/Open The Modal -->
+		<input id="btn_logoff" class="iconimg" type="image" src="../img/logofficon.png" alt="Abmelden">
     </div>
+</div>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+	<!-- Modal content -->
+  	<div class="modal-content desktop-4-cols phone-12-cols">
+    	<p class="content message-popup">
+      		Sind Sie sicher, dass Sie sich abmelden wollen? 
+    	</p>
+    	<div class="flex-container">
+    		<button class="btn-popup-red">
+        		<p>Logout</p>
+      		</button>
+      		<button class="btn-popup-green">
+       			<p>Cancel</p>
+     		</button>
+    	</div>
+	</div>
 </div>
 
 <div class="flex-container">
@@ -268,5 +323,44 @@ function goToGroup()
     </div>
 
 </div>
+<script>
+	function goToGroup()
+	{
+		var bestaetigung = window.confirm('Möchten Sie der Gruppe beitreten?');
+		//Nach Betätigung des Buttons
+		if(bestaetigung) {
+		  window.location.href = 'detailgroup02.html'
+		}
+		else {
+		  //Abbrechen wurde gedrückt
+		}
+	}
+
+	// Get the modal
+	var modal = document.getElementById("myModal");
+
+	// Get the button that opens the modal
+	var btn_icon_logoff = document.getElementById("btn_logoff");
+
+	// Get the button 'cancel' element that closes the modal
+	var btn_cancel = document.getElementsByClassName("btn-popup-green")[0];
+
+	// When the user clicks the button, open the modal 
+	btn_icon_logoff.onclick = function() {
+  		modal.style.display = "flex";
+	}
+
+	// When the user clicks on button 'cancel', close the modal
+	btn_cancel.onclick = function() {
+  		modal.style.display = "none";
+	}
+
+	// When the user clicks anywhere outside of the modal, close it
+	window.onclick = function(event) {
+  		if (event.target == modal) {
+    		modal.style.display = "none";
+  		}
+	}
+</script>
 </body>
 </html>
