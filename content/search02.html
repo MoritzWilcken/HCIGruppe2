@@ -217,6 +217,26 @@ tr:nth-child(even) {
 	</div>
 </div>
 
+
+<!-- The Modal -->
+<div id="groupModal" class="modal">
+
+	<!-- Modal content -->
+  	<div class="modal-content desktop-4-cols phone-12-cols">
+    	<p class="content message-popup">
+      		Möchten Sie der Gruppe beitreten?
+    	</p>
+    	<div class="flex-container">
+    		<button class="btn-popup-red" id="btn_cancel">
+        		<p>Nein</p>
+      		</button>
+      		<button class="btn-popup-green" id="btn_okay">
+       			<p>Ja</p>
+     		</button>
+    	</div>
+	</div>
+</div>
+
 <div class="flex-container">
 
 	<div class="menu desktop-3-cols phone-12-cols">        
@@ -301,14 +321,33 @@ tr:nth-child(even) {
 <script>
 	function goToGroup()
 	{
-		var bestaetigung = window.confirm('Möchten Sie der Gruppe beitreten?');
-		//Nach Betätigung des Buttons
-		if(bestaetigung) {
-		  window.location.href = 'detailgroup02.html'
-		}
-		else {
-		  //Abbrechen wurde gedrückt
-		}
+		groupModal.style.display = "flex";
+	}
+	
+	// Get the modal
+	var groupModal = document.getElementById("groupModal");
+
+	// Get the button that opens the modal
+	var btn_okay = document.getElementById("btn_okay");
+
+	// Get the button 'cancel' element that closes the modal
+	var btn_cancel = document.getElementById("btn_cancel");
+
+	// When the user clicks the button, open the modal 
+	btn_okay.onclick = function() {
+  		window.location.href = 'detailgroup02.html'
+	}
+	
+	// When the user clicks on button 'cancel', close the modal
+	btn_cancel.onclick = function() {
+  		groupModal.style.display = "none";
+	}
+
+	// When the user clicks anywhere outside of the modal, close it
+	window.onclick = function(event) {
+  		if (event.target == groupModal) {
+    		groupModal.style.display = "none";
+  		}
 	}
 
 	// Get the modal
