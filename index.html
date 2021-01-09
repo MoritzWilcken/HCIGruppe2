@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html>
 <head>
@@ -280,4 +281,291 @@ window.onclick = function(event) {
 }
 </script>
 </body>
+=======
+<!DOCTYPE html>
+<html>
+<head>
+<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+<style>
+
+* {
+    box-sizing: border-box; /* include margin, border, and padding in size */
+    font-family: 'Montserrat';
+}
+
+.flex-container {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap; /* Safari 6.1+ */
+    flex-wrap: wrap;
+}
+
+/* Phones: */
+@media only screen and (max-width: 749px) {
+  .phone-12-cols {width: 100%;}
+}
+
+/* Desktop: */
+@media only screen and (min-width: 750px) {
+    .desktop-1-cols {width: 8.33%;}
+    .desktop-2-cols {width: 16.66%;}
+    .desktop-3-cols {width: 25%;}
+    .desktop-4-cols {width: 33.33%;}
+    .desktop-5-cols {width: 41.66%;}
+    .desktop-6-cols {width: 50%;}
+    .desktop-7-cols {width: 58.33%;}
+    .desktop-8-cols {width: 66.66%;}
+    .desktop-9-cols {width: 75%;}
+    .desktop-10-cols {width: 83.33%;}
+    .desktop-11-cols {width: 91.66%;}
+    .desktop-12-cols {width: 100%;}  
+}
+
+.logo {
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+
+
+.content {
+    padding-left: 20px;
+    padding-right: 20px;
+	text-align: center;
+	color: #07a9fc;
+}
+
+.menu li {
+    padding: 8px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    background-color: #0052af;
+    color: #f1f1f1;
+}
+
+.menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    font-size: 16pt;
+}
+
+.menu li:hover {
+    background-color: #07a9fc;
+}
+
+.logoimg {
+	max-height:100%
+}
+
+.iconimg {
+	max-height:50px
+}
+
+
+.aside > div {
+    height: 50px;
+    padding: 8px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    background-color :#008000;
+    color: #f1f1f1;
+}
+
+table{
+	margin: 0 auto;
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 16px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+.content_table{
+    margin-top: 6px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  height: 170px;
+  padding: 20px;
+  border: 1px solid #888;
+}
+
+.message-popup {
+  text-align: center;
+}
+
+.btn-popup-red {
+  background-color: #FF0000;
+  color: white;
+  font-size: 16px;
+  border: none;
+  padding: auto;
+  margin: auto;
+}
+
+.btn-popup-green {
+  background-color: #3ADF00;
+  color: white;
+  font-size: 16px;
+  border: none;
+  padding: auto;
+  margin: auto;
+}
+
+</style>
+</head>
+<body>
+<div class="flex-container">
+	<div class="logo desktop-3-cols phone-12-cols">	
+		<a style="height: 120px;" href="index.html">
+			<img class="logoimg" src="img/Logo2.png" alt="Logo Study Radar" ></img>
+		</a>
+	</div>
+	<div class="content desktop-6-cols phone-12-cols">
+		<h1>Startseite</h1>
+	</div>
+	<div class="aside desktop-3-cols phone-12-cols">
+		<a href="content/help.html">
+			 <img class="iconimg" src="img/questionmark.png" alt="Hilfe">
+		</a>		
+        <img class="iconimg" src="img/calendar.png" alt="Meine Termine">
+		<a href="content/search01.html">
+			<img class="iconimg" src="img/suche.png" alt="Suchen">
+		</a>
+		<img class="iconimg" src="img/einstellungen.png" alt="Einstellungen">
+    <!-- Trigger/Open The Modal -->
+    <input id="btn_logoff" class="iconimg" type="image" src="img/logofficon.png" alt="Abmelden">
+    </div>
+</div>
+
+
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content desktop-4-cols phone-12-cols">
+    <p class="content message-popup">
+      Sind Sie sicher, dass Sie sich abmelden wollen? 
+    </p>
+    <div class="flex-container">
+      <button class="btn-popup-red">
+        <p>Logout</p>
+      </button>
+      <button class="btn-popup-green">
+        <p>Cancel</p>
+      </button>
+    </div>
+  </div>
+
+</div>
+
+<div class="flex-container">
+
+	<div class="menu desktop-3-cols phone-12-cols">        
+        <ul>
+			<li>Termine</li>
+			<li>Offene Anfragen</li>
+			<li>Vorschläge</li>
+			<li>Notizen</li>
+		</ul>
+    </div>
+	
+	<div class="content desktop-9-cols phone-12-cols">
+		<table class="content_table">
+			<tr>
+				<td>Meldungen:</td>
+				<td>
+					<ul>
+						<li>Study Radar hat ein neues Design! </li>
+						<li>Bugs fixed:...</li>
+						<li>NEU! Anfragen jetzt auch mobil beantworten</li>
+						<li>Lerngruppe: GTI Neue Anfrage</li>
+					</ul>				
+				</td>
+			</tr>
+			<tr>
+				<td>Meine Gruppen:</td>
+				<td>
+					<ul>
+						<li>Grundlagen der prähistorischen Wirtschaft</li>
+						<li>Aufbau von Gerstenkaltgetränken</li>
+						<li>Ursachenforschung</li>
+						<li>Analysis B</li>
+						<li>Grundlagen Betriebssysteme</li>
+					</ul>				
+				</td>
+			</tr>
+			<tr>
+				<td>Profil:</td>
+				<td>
+					<ul>
+						<li>Max Mustermann</li>
+						<li>Informatik, technische Informatik</li>
+						<li>in 4 Gruppen aktiv</li>
+					</ul>				
+				</td>
+			</tr>
+       </table>
+    </div>
+
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn_icon_logoff = document.getElementById("btn_logoff");
+
+// Get the button 'cancel' element that closes the modal
+var btn_cancel = document.getElementsByClassName("btn-popup-green")[0];
+
+// When the user clicks the button, open the modal 
+btn_icon_logoff.onclick = function() {
+  modal.style.display = "flex";
+}
+
+// When the user clicks on button 'cancel', close the modal
+btn_cancel.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+</body>
+>>>>>>> c82c82c78b839d4046480ae532b62306741d9aa6
 </html>
