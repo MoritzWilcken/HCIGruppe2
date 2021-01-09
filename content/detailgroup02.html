@@ -239,6 +239,9 @@ tr:nth-child(even) {
 		<h1>Lerngruppe</h1>
 	</div>
 	<div class="aside desktop-3-cols phone-12-cols">
+		<a href="help.html">
+			 <img class="iconimg" src="../img/questionmark.png" alt="Hilfe">
+		</a>
         <img class="iconimg" src="../img/calendar.png" alt="Meine Termine"></img>
 		<a href="search01.html">
 			<img class="iconimg" src="../img/suche.png" alt="Suchen"></img>
@@ -264,6 +267,25 @@ tr:nth-child(even) {
       		</button>
       		<button class="btn-popup-green">
        			<p>Cancel</p>
+     		</button>
+    	</div>
+	</div>
+</div>
+
+<!-- The Modal -->
+<div id="groupModal" class="modal">
+
+	<!-- Modal content -->
+  	<div class="modal-content desktop-4-cols phone-12-cols">
+    	<p class="content message-popup">
+      		Möchten Sie der Gruppe wirklich verlassen?
+    	</p>
+    	<div class="flex-container">
+    		<button class="btn-popup-red" id="btn_cancel">
+        		<p>Nein</p>
+      		</button>
+      		<button class="btn-popup-green" id="btn_okay">
+       			<p>Ja</p>
      		</button>
     	</div>
 	</div>
@@ -318,6 +340,11 @@ tr:nth-child(even) {
 						<li>Whatsapp: link..</li>
 					</ul>	
 				</div>
+				<div class="groupbutton">
+					<ul>
+						<li onclick="goToGroup()" >Gruppe verlassen</li>
+					</ul>					
+				</div>
 			</div>
 			<div class="group desktop-12-cols phone-12-cols">
 				<div style="text-align: left">
@@ -332,6 +359,37 @@ tr:nth-child(even) {
 
 </div>
 <script>
+	function goToGroup()
+	{
+		groupModal.style.display = "flex";
+	}
+	
+	// Get the modal
+	var groupModal = document.getElementById("groupModal");
+
+	// Get the button that opens the modal
+	var btn_okay = document.getElementById("btn_okay");
+
+	// Get the button 'cancel' element that closes the modal
+	var btn_cancel = document.getElementById("btn_cancel");
+
+	// When the user clicks the button, open the modal 
+	btn_okay.onclick = function() {
+  		window.location.href = 'detailgroup01.html'
+	}
+	
+	// When the user clicks on button 'cancel', close the modal
+	btn_cancel.onclick = function() {
+  		groupModal.style.display = "none";
+	}
+
+	// When the user clicks anywhere outside of the modal, close it
+	window.onclick = function(event) {
+  		if (event.target == groupModal) {
+    		groupModal.style.display = "none";
+  		}
+	}
+	
 	// Get the modal
 	var modal = document.getElementById("myModal");
 
