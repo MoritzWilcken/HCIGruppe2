@@ -76,7 +76,11 @@
 }
 
 .iconimg {
-	max-height:50px
+	max-height: 50px;
+  max-width: 50px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 
@@ -137,13 +141,21 @@ tr:nth-child(even) {
   text-align: center;
 }
 
+.flex-container-button {
+	display: flex;	
+	flex-direction: row-reverse;
+}
+
 .btn-popup-red {
   background-color: #FF0000;
   color: white;
   font-size: 16px;
   border: none;
-  padding: auto;
-  margin: auto;
+  width: 100px;
+  height: 50px;
+  margin-top: 5px;
+  margin-right: 10px;
+  margin-left: 10px;
 }
 
 .btn-popup-green {
@@ -151,8 +163,32 @@ tr:nth-child(even) {
   color: white;
   font-size: 16px;
   border: none;
-  padding: auto;
-  margin: auto;
+  width: 100px;
+  height: 50px;
+  margin-top: 5px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.flex-container-nav {
+  display: flex;
+  flex-direction: row;
+}
+
+.img-label {
+  margin: 0px;
+  padding: 0px;
+	color: #07a9fc;
+  font-size: 10pt;
+  text-align: center;
+}
+
+
+.img-with-label {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 5px;
 }
 </style>
 </head>
@@ -163,21 +199,58 @@ tr:nth-child(even) {
 			<img class="logoimg" src="../img/Logo2.png" alt="Logo Study Radar" ></img>
 		</a>
 	</div>
-	<div class="content desktop-6-cols phone-12-cols">
+	<div class="content desktop-5-cols phone-12-cols">
 		<h1>Startseite</h1>
 	</div>
-	<div class="aside desktop-3-cols phone-12-cols">
-		<a href="help.html">
-			 <img class="iconimg" src="../img/questionmark.png" alt="Hilfe">
-		</a>
-        <img class="iconimg" src="../img/calendar.png" alt="Meine Termine"></img>
-		<a href="search01.html">
-			<img class="iconimg" src="../img/suche.png" alt="Suchen"></img>
-		</a>		
-		<img class="iconimg" src="../img/einstellungen.png" alt="Einstellungen"></img>
-		<img class="iconimg" src="../img/logofficon.png" alt="Abmelden"></img>
+	<div class="desktop-4-cols phone-12-cols">
+    <div class="flex-container-nav">
+      <div class="img-with-label">
+        <a href="content/help.html">
+          <img class="iconimg" src="../img/questionmark.png" href="content/help.html" alt="Hilfe">
+        </a>
+        <p class="img-label">Hilfe</p>
+      </div>
+      <div class="img-with-label">
+        <img class="iconimg" src="../img/calendar.png">
+        <p class="img-label">Kalender</p>
+      </div>
+      <div class="img-with-label">
+        <a href="content/search01.html">
+          <img class="iconimg" src="../img/suche.png" alt="Suchen">
+        </a>
+        <p class="img-label">Suche</p>
+      </div>
+      <div class="img-with-label">
+        <img class="iconimg" src="../img/einstellungen.png" alt="Einstellungen">
+        <p class="img-label">Einstellungen</p>
+      </div>
+      <div class="img-with-label">
+        <input id="btn_logoff" class="iconimg" type="image" src="../img/logofficon.png" alt="Abmelden">
+        <p class="img-label">Abmelden</p>
+      </div>
     </div>
+  </div>	
 </div>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content desktop-4-cols phone-12-cols">
+      <p class="content message-popup">
+        Sind Sie sicher, dass Sie sich abmelden wollen? 
+      </p>
+      <div class="flex-container-button">
+        <button class="btn-popup-red">
+          <p>Abmelden</p>
+        </button>
+        <button class="btn-popup-green">
+          <p>Abbrechen</p>
+        </button>
+      </div>
+    </div>
+    
+  </div>
 
 <div class="flex-container">
 
@@ -189,7 +262,9 @@ tr:nth-child(even) {
 			<li>Notizen</li>
 		</ul>
     </div>
-	
+    
+    
+
 	<div class="content desktop-9-cols phone-12-cols">
 Content
     </div>
