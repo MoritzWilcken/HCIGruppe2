@@ -17,9 +17,7 @@
 }
 
 /* Phones: */
-@media only screen and (max-width: 749px) {
-  .phone-12-cols {width: 100%;}
-}
+.phone-12-cols {width: 100%;}
 
 /* Desktop: */
 @media only screen and (min-width: 750px) {
@@ -34,7 +32,7 @@
     .desktop-9-cols {width: 75%;}
     .desktop-10-cols {width: 83.33%;}
     .desktop-11-cols {width: 91.66%;}
-    .desktop-12-cols {width: 100%;}  
+    .desktop-12-cols {width: 100%;}
 }
 
 .logo {
@@ -50,8 +48,8 @@
 .content {
     padding-left: 20px;
     padding-right: 20px;
-	  text-align: center;
-	  color: #07a9fc;
+	text-align: center;
+	color: #07a9fc;
 }
 
 .menu li {
@@ -86,6 +84,15 @@
 }
 
 
+.aside > div {
+    height: 50px;
+    padding: 8px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    background-color :#008000;
+    color: #f1f1f1;
+}
+
 table{
 	margin: 0 auto;
     font-family: arial, sans-serif;
@@ -103,7 +110,7 @@ tr:nth-child(even) {
 }
 
 .content_table{
-    margin-top: 6px;
+	 margin-top: 6px;
 }
 
 /* The Modal (background) */
@@ -183,72 +190,69 @@ tr:nth-child(even) {
   justify-content: center;
   margin: 5px;
 }
-
 </style>
 </head>
 <body>
 <div class="flex-container">
 	<div class="logo desktop-3-cols phone-12-cols">	
-		<a style="height: 120px;" href="index.html">
-			<img class="logoimg" src="img/Logo2.png" alt="Logo Study Radar" ></img>
+		<a style="height: 120px;" href="../index.html">
+			<img class="logoimg" src="../img/Logo2.png" alt="Logo Study Radar" ></img>
 		</a>
 	</div>
 	<div class="content desktop-5-cols phone-12-cols">
-		<h1>Startseite</h1>
-  </div>
-  <div class="desktop-4-cols phone-12-cols">
+		<h1>Kalendar</h1>
+	</div>
+	<div class="desktop-4-cols phone-12-cols">
     <div class="flex-container-nav">
       <div class="img-with-label">
-        <a href="content/help.html">
-          <img class="iconimg" src="img/questionmark.png" alt="Hilfe">
+        <a href="help.html">
+          <img class="iconimg" src="../img/questionmark.png" href="content/help.html" alt="Hilfe">
         </a>
         <p class="img-label">Hilfe</p>
       </div>
       <div class="img-with-label">
-			  <a href="content/calendar.html">
-          <img class="iconimg" src="../img/calendar.png" href="content/calendar.html" alt="Kalender">
+        <a href="calendar.html">
+          <img class="iconimg" src="../img/calendar.png" href="content/calendar.html" alt="Kalendar">
         </a>
         <p class="img-label">Kalender</p>
       </div>
       <div class="img-with-label">
-        <a href="content/search01.html">
-          <img class="iconimg" src="img/suche.png" alt="Suchen">
+        <a href="search01.html">
+          <img class="iconimg" src="../img/suche.png" alt="Suchen">
         </a>
         <p class="img-label">Suche</p>
       </div>
       <div class="img-with-label">
-        <img class="iconimg" src="img/einstellungen.png" alt="Einstellungen">
+        <img class="iconimg" src="../img/einstellungen.png" alt="Einstellungen">
         <p class="img-label">Einstellungen</p>
       </div>
       <div class="img-with-label">
-        <input id="btn_logoff" class="iconimg" type="image" src="img/logofficon.png" alt="Abmelden">
+        <input id="btn_logoff" class="iconimg" type="image" src="../img/logofficon.png" alt="Abmelden">
         <p class="img-label">Abmelden</p>
       </div>
     </div>
-  </div>
+  </div>	
 </div>
-
-
 
 <!-- The Modal -->
 <div id="myModal" class="modal">
 
-  <!-- Modal content -->
-  <div class="modal-content desktop-4-cols phone-12-cols">
-    <p class="content message-popup">
-      Sind Sie sicher, dass Sie sich abmelden wollen? 
-    </p>
-    <div class="flex-container-button">
-      <button class="btn-popup-red">
-        <p>Abmelden</p>
-      </button>
-      <button class="btn-popup-green">
-        <p>Abbrechen</p>
-      </button>
+    <!-- Modal content -->
+    <div class="modal-content desktop-4-cols phone-12-cols">
+      <p class="content message-popup">
+        Sind Sie sicher, dass Sie sich abmelden wollen? 
+      </p>
+      <div class="flex-container-button">
+        <button class="btn-popup-red">
+          <p>Abmelden</p>
+        </button>
+        <button class="btn-popup-green">
+          <p>Abbrechen</p>
+        </button>
+      </div>
     </div>
+    
   </div>
-  
-</div>
 
 <div class="flex-container">
 
@@ -262,72 +266,41 @@ tr:nth-child(even) {
 			<li>Notizen</li>
 		</ul>
     </div>
-	
+    
+    
+
 	<div class="content desktop-9-cols phone-12-cols">
-		<table class="content_table">
-			<tr>
-				<td>Meldungen:</td>
-				<td>
-					<ul>
-						<li>Study Radar hat ein neues Design! </li>
-						<li>Bugs fixed:...</li>
-						<li>NEU! Anfragen jetzt auch mobil beantworten</li>
-						<li>Lerngruppe: GTI Neue Anfrage</li>
-					</ul>				
-				</td>
-			</tr>
-			<tr>
-				<td>Meine Gruppen:</td>
-				<td>
-					<ul>
-						<li>Grundlagen der prähistorischen Wirtschaft</li>
-						<li>Aufbau von Gerstenkaltgetränken</li>
-						<li>Ursachenforschung</li>
-						<li>Analysis B</li>
-						<li>Grundlagen Betriebssysteme</li>
-					</ul>				
-				</td>
-			</tr>
-			<tr>
-				<td>Profil:</td>
-				<td>
-					<ul>
-						<li>Max Mustermann</li>
-						<li>Informatik, technische Informatik</li>
-						<li>in 4 Gruppen aktiv</li>
-					</ul>				
-				</td>
-			</tr>
-       </table>
+Content
     </div>
 
 </div>
 <script>
-// Get the modal
-var modal = document.getElementById("myModal");
+    // Get the modal
+	var modal = document.getElementById("myModal");
 
-// Get the button that opens the modal
-var btn_icon_logoff = document.getElementById("btn_logoff");
+    // Get the button that opens the modal
+    var btn_icon_logoff = document.getElementById("btn_logoff");
 
-// Get the button 'cancel' element that closes the modal
-var btn_cancel = document.getElementsByClassName("btn-popup-green")[0];
+    // Get the button 'cancel' element that closes the modal
+    var btn_cancel = document.getElementsByClassName("btn-popup-green")[0];
 
-// When the user clicks the button, open the modal 
-btn_icon_logoff.onclick = function() {
-  modal.style.display = "flex";
-}
+    // When the user clicks the button, open the modal 
+    btn_icon_logoff.onclick = function() {
+        modal.style.display = "flex";
+    }
 
-// When the user clicks on button 'cancel', close the modal
-btn_cancel.onclick = function() {
-  modal.style.display = "none";
-}
+    // When the user clicks on button 'cancel', close the modal
+    btn_cancel.onclick = function() {
+        modal.style.display = "none";
+    }
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+
 </script>
 </body>
 </html>
