@@ -262,6 +262,153 @@ tr:nth-child(even) {
   margin: 5px;
 }
 
+.toggle label {
+	position: relative;
+	display: inline-block;
+	width: 10em;
+	height: 3.5em;
+}
+
+.toggle input {
+	display: none;
+}
+
+.toggle .slider {
+	/* Grundfläche */
+	
+	position: absolute;
+	cursor: pointer;
+	top: 1.5em;
+	left: 2em;
+	width: 4em;
+	height: 2em;
+	background-color: #c32e04;
+	/* red */
+	
+	transition: all .3s ease-in-out;
+	border-radius: 1em;
+}
+
+.toggle .slider:before {
+	/* verschiebbarer Button */
+	
+	position: absolute;
+	content: "";
+	height: 1.6em;
+	width: 1.6em;
+	left: 0.2em;
+	bottom: 0.2em;
+	background-color: white;
+	border-radius: 50%;
+	transition: all .3s ease-in-out;
+}
+
+.toggle input:checked + .slider {
+	background-color: #5a9900;
+	/* green */
+}
+
+.toggle input:focus + .slider {
+	background-color: pink;
+	box-shadow: 0 0 1px #5a9900;
+}
+
+.toggle input:checked + .slider:before {
+	-webkit-transform: translateX(1.9em);
+	/* Android 4 */
+	
+	-ms-transform: translateX(1.9em);
+	/* IE9 */
+	
+	transform: translateX(1.9em);
+}
+
+.text .slider:after {
+	/* Text vor dem FlipFlop-Schalter */
+	
+	position: absolute;
+	content: "Nein";
+	color: #c32e04;
+	font-weight: bold;
+	height: 1.6em;
+	left: -3.0em;
+	bottom: 0.2em;
+}
+
+.text input:checked + .slider:after {
+	/* Text hinter dem FlipFlop-Schalter */
+	
+	position: absolute;
+	content: "Ja";
+	color: #5a9900;
+	left: 4.5em;
+}
+
+select {
+	display: block;
+	font-size: 1.0em;
+	padding: .6em 1.4em .5em .8em;
+	width: 20em;
+	max-width: 100%;
+	/* useful when width is set to anything other than 100% */
+	
+	box-sizing: border-box;
+	margin: 0;
+	border: 1px solid #aaa;
+	box-shadow: 0 1px 0 1px rgba(0, 0, 0, .04);
+	border-radius: .5em;
+	-webkit-appearance: none;
+	appearance: none;
+	background-color: transparent;
+	/* note: bg image below uses 2 urls. The first is an svg data uri for the arrow icon, and the second is the gradient. 
+        for the icon, if you want to change the color, be sure to use `%23` instead of `#`, since it's a url. You can also swap in a different svg icon or an external image reference
+    */
+	
+	background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'), linear-gradient(to bottom, #ffffff 0%, #e5e5e5 100%);
+	background-repeat: no-repeat, repeat;
+	/* arrow icon position (1em from the right, 50% vertical) , then gradient position*/
+	
+	background-position: right .7em top 50%, 0 0;
+	/* icon size, then gradient */
+	
+	background-size: .65em auto, 100%;
+}
+/* Hide arrow icon in IE browsers */
+
+select::-ms-expand {
+	display: none;
+}
+/* Hover style */
+
+select:hover {
+	border-color: #888;
+}
+
+select > *:hover {
+	background-color: #dfac20;
+}
+/* Focus style */
+
+select:focus {
+	border-color: #aaa;
+	/* It'd be nice to use -webkit-focus-ring-color here but it doesn't work on box-shadow */
+	
+	box-shadow: 0 0 1px 3px rgba(59, 153, 252, .7);
+	box-shadow: 0 0 0 3px -moz-mac-focusring;
+	color: #222;
+	outline: none;
+}
+/* Set options to normal weight */
+
+select option {
+	font-weight: normal;
+}
+
+output {
+	font-family: courier;
+	font-size: 2em;
+	color: #c32e04;
+}
 
 </style>
 
@@ -297,7 +444,7 @@ tr:nth-child(even) {
               <p class="img-label">Suche</p>
             </div>
             <div class="img-with-label">
-              <a href="profile.html">
+				<a href="profile.html">
 				<img class="iconimg" src="../img/einstellungen.png" alt="Einstellungen">
 			  </a>
               <p class="img-label">Einstellungen</p>
@@ -365,41 +512,112 @@ tr:nth-child(even) {
 	<div class="content desktop-9-cols phone-12-cols">
 		<div class="flex-container">
 			<div class="group desktop-12-cols phone-12-cols">
-				<h3>Programmieren I</h3>
-			</div>
-			<div class="group desktop-6-cols phone-12-cols">
-				<div style="text-align: left">
-					Mitglieder:
-				</div>
-				<div style="text-align: left">
-					<ul>
-						<li>Matthes P.</li>
-						<li>Christiane F.</li>
-						<li>Alexander J.</li>
-						<li>Trista M.</li>
-					</ul>
-				</div>
-			</div>
-			<div  class="group desktop-6-cols phone-12-cols">
-				<div class="groupbutton">
-					<ul>
-						<li onclick="goToGroup()">Lerngruppe beitreten</li>
-					</ul>					
-				</div>
-				<div class="groupinfo">
-					<ul>
-						<li>Treffen Dienstags 15:30 Uhr</li>
-						<li>Lerngruppe beitreten um Kontaktdetails zu sehen</li>
-					</ul>	
-				</div>
+				<h3>Profil</h3>
 			</div>
 			<div class="group desktop-12-cols phone-12-cols">
-				<div style="text-align: left">
-					Info:
-				</div>
-				<div style="text-align: left">
-					Moin moin, wir sind eine offene Gruppe voller Erstsemester und würden uns über jeden neuen Lernparter freuen.
-				</div>
+				<table class="content_table">
+					<tr>
+						<td>Parameter</td>
+						<td>Value</td>
+						<td>Für alle sichtbar?</td>
+					</tr>
+					<tr>
+						<td style="text-align: left;">Name:</td>
+						<td>
+							<input style="font-size: 12pt;height: 30px;width:100%;" type="text" value="Rainer Zufall"></input>
+						</td>
+						<td>
+							<div class="toggle text">
+								<label>
+									<input type="checkbox"></input><span class="slider"></span>
+								</label>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td style="text-align: left;">UserName:</td>
+						<td>
+							<input style="font-size: 12pt;height: 30px;width:100%;" type="text" value="JunkyBoy1997"></input>
+						</td>
+						<td>
+						</td>
+					</tr
+					<tr>
+						<td style="text-align: left;">Passwort:</td>
+						<td>
+							<input style="font-size: 12pt;height: 30px;width:100%;" type="password" value="Rainer Zufall"></input>
+						</td>
+						<td>
+						</td>
+					</tr>
+					<tr>
+						<td style="text-align: left;">Bild:</td>
+						<td>
+							<img style="height: 250px" src="../img/paul.jpg"></img>
+							<p></p>
+							<button style="font-size: 16pt;" type="button" >Bild ändern</button>
+						</td>
+						<td>
+							<div class="toggle text">
+								<label>
+									<input id="checkbox1" type="checkbox"></input><span class="slider"></span>
+								</label>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td style="text-align: left;">Semester:</td>
+						<td>
+							<label>
+								<select id="combobox1" size="1">
+									<option value="P101">1. Semester</option>
+									<option value="P102">2. Semester</option>
+									<option value="P103">3. Semester</option>
+									<option value="P104">4. Semester</option>
+									<option value="P105">5. Semester</option>
+									<option value="P106">6. Semester</option>
+									<option value="P107">7. Semester</option>
+									<option value="P108">8. Semester</option>
+									<option value="P109">9. Semester</option>
+								</select>
+							</label>
+						</td>
+						<td>
+							<div class="toggle text">
+								<label>
+									<input type="checkbox"></input><span class="slider"></span>
+								</label>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td style="text-align: left;">Fächer:</td>
+						<td>
+							<textarea style="font-size: 12pt;width:100%;" cols="70" rows="20">Programmieren II, HCI, Analysis B, Lineare Algebra B, Physis II</textarea>
+						</td>
+						<td>
+							<div class="toggle text">
+								<label>
+									<input id="checkbox4" type="checkbox"></input><span class="slider"></span>
+								</label>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td style="text-align: left;">Intressen:</td>
+						<td>
+							<textarea style="font-size: 12pt;width:100%;" cols="70" rows="20">Fußball, Sport, Programmieren, TableTop Spiele, KI-Systeme, Schach</textarea>
+						</td>
+						<td>
+							<div class="toggle text">
+								<label>
+									<input id="checkbox2" type="checkbox"></input><span class="slider"></span>
+								</label>
+							</div>
+						</td>
+					</tr>
+					
+			   </table>
 			</div>
 		</div>
     </div>
@@ -436,6 +654,15 @@ tr:nth-child(even) {
     		groupModal.style.display = "none";
   		}
 	}
+	
+	var checkbox1 = document.getElementById("checkbox1");
+	checkbox1.checked = true;
+	var checkbox2 = document.getElementById("checkbox2");
+	checkbox2.checked = true;
+	var checkbox4 = document.getElementById("checkbox4");
+	checkbox4.checked = true;
+	var selectCtrl = document.getElementById("combobox1");
+	selectCtrl.selectedIndex = 2;
 
 	// Get the modal
 	var modal = document.getElementById("myModal");
