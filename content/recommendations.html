@@ -101,7 +101,7 @@ table{
 }
 td, th {
     border: 1px solid #dddddd;
-    text-align: left;
+    text-align: center;
     padding: 16px;
 }
 
@@ -111,6 +111,24 @@ tr:nth-child(even) {
 
 .content_table{
 	 margin-top: 6px;
+}
+
+.content_table li {
+    padding: 8px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    background-color: #0052af;
+    color: #f1f1f1;
+}
+
+.content_table ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.content_table li:hover {
+    background-color: #07a9fc;
 }
 
 /* The Modal (background) */
@@ -170,6 +188,72 @@ tr:nth-child(even) {
   margin-left: 10px;
 }
 
+.btn-popup-yellow {
+  background-color: #F4D03F;
+  color: white;
+  font-size: 14px;
+  border: none;
+  width: 100px;
+  height: 50px;
+  margin-top: 5px;
+  margin-right: 10px;
+  margin-left: 10px;
+  word-wrap: break-word;
+  padding: 0px;
+}
+
+.group
+{
+	padding: 8px;
+	margin-top: 30px;
+    margin-bottom: 30px;
+	border: 3px solid #07a9fc;
+	background-color: #FFFFFF;
+}
+
+.groupbutton ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.groupbutton li
+{
+	background-color: #0052af;
+	color:white;
+	height:40px;
+	justify-content: center;
+    align-items: center;
+	padding: 8px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+
+.groupbutton li:hover {
+    background-color: #07a9fc;
+}
+
+.groupinfo ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.groupinfo li
+{
+	height:40px;
+	justify-content: center;
+    align-items: center;
+	padding: 8px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+
+.groupinfo
+{
+	margin-top: 30px;
+}
+
 .flex-container-nav {
   display: flex;
   flex-direction: row;
@@ -190,6 +274,11 @@ tr:nth-child(even) {
   justify-content: center;
   margin: 5px;
 }
+
+span.gp {color:#6531BF}
+
+.subtext { font-size: 14px; }
+
 </style>
 </head>
 <body>
@@ -200,7 +289,7 @@ tr:nth-child(even) {
 		</a>
 	</div>
 	<div class="content desktop-5-cols phone-12-cols">
-		<h1>Kalendar</h1>
+		<h1>Vorschläge</h1>
 	</div>
 	<div class="desktop-4-cols phone-12-cols">
     <div class="flex-container-nav">
@@ -259,25 +348,97 @@ tr:nth-child(even) {
 <div class="flex-container">
 
 	<div class="menu desktop-3-cols phone-12-cols">        
-		<ul>
-			<a href="calendar.html"style="text-decoration: none; ">
-				<li>Termine</li>
-			</a>
-			<a href="requests.html"style="text-decoration: none; ">
-				<li>Offene Anfragen</li>
-			</a>
-			<a href="recommendations.html"style="text-decoration: none; ">
-				<li>Vorschl�ge</li>
-			</a>
+    <ul>
+      <a href="calendar.html"style="text-decoration: none; ">
+        <li>Termine</li>
+      </a>
+	  <a href="requests.html"style="text-decoration: none; ">
+		<li>Offene Anfragen</li>
+	  </a>
+	  <a href="recommendations.html"style="text-decoration: none; ">
+			<li>Vorschläge</li>
+	  </a>
 			<li>Notizen</li>
 		</ul>
     </div>
     
-    
-
-	<div class="content desktop-9-cols phone-12-cols">
-    <img src="../img/calendar_dummy.png" height="700" width="1000" alt="calendar_dummy" >
+    <div class="content desktop-9-cols phone-12-cols">
+		<div class="flex-container">
+			<div class="group desktop-12-cols phone-12-cols">
+				<h2>Folgende Lerngruppen könnten Sie vielleicht auch interessieren:</h2>
+				<table class="content_table">
+					<tr>
+						<td style="text-align: left;">Gruppen:</td>
+						<td><img style="height: 20px;" src="../img/person.png"></img></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td style="text-align: left;"><span class="gp">Mechanik I</span></td>
+						<td>3</td>
+						<td><img style="height: 20px" src="../img/info.png"></img></td>
+						<td>
+							<ul>
+								<li>Beitreten</li>
+							</ul>
+						</td>
+					</tr>
+					<tr>
+						<td style="text-align: left;"><span class="gp">Mensch-Computer Interaktion I</span></td>
+						<td>7</td>
+						<td><img style="height: 20px" src="../img/info.png"></img></td>
+						<td>
+							<ul>
+								<li>Beitreten</li>
+							</ul>
+						</td>
+					</tr>
+					<tr>
+						<td style="text-align: left;"><span class="gp">Nanotechnologie 1. Semester</span></td>
+						<td>24</td>
+						<td><img style="height: 20px" src="../img/info.png"></img></td>
+						<td>
+							<ul>
+								<li>Beitreten</li>
+							</ul>
+						</td>
+					</tr>
+					<tr>
+						<td style="text-align: left;"><span class="gp">Geodäsie-Fernerkundung</span></td>
+						<td>5</td>
+						<td><img style="height: 20px" src="../img/info.png"></img></td>
+						<td>
+							<ul>
+								<li>Beitreten</li>
+							</ul>
+						</td>
+					</tr>
+					<tr>
+						<td style="text-align: left;"><span class="gp">Betriebssysteme</span></td>
+						<td>1</td>
+						<td><img style="height: 20px" src="../img/info.png"></img></td>
+						<td>
+							<ul>
+								<li>Beitreten</li>
+							</ul>
+						</td>
+					</tr>
+					<tr>
+						<td style="text-align: left;"><span class="gp">BWL II</span></td>
+						<td>7</td>
+						<td><img style="height: 20px" src="../img/info.png"></img></td>
+						<td>
+							<ul>
+								<li>Beitreten</li>
+							</ul>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
     </div>
+
+	
 
 </div>
 <script>
