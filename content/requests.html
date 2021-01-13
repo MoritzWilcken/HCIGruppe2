@@ -113,6 +113,24 @@ tr:nth-child(even) {
 	 margin-top: 6px;
 }
 
+.content_table li {
+    padding: 8px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    background-color: #0052af;
+    color: #f1f1f1;
+}
+
+.content_table ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.content_table li:hover {
+    background-color: #07a9fc;
+}
+
 /* The Modal (background) */
 .modal {
   display: none; /* Hidden by default */
@@ -170,6 +188,72 @@ tr:nth-child(even) {
   margin-left: 10px;
 }
 
+.btn-popup-yellow {
+  background-color: #F4D03F;
+  color: white;
+  font-size: 14px;
+  border: none;
+  width: 100px;
+  height: 50px;
+  margin-top: 5px;
+  margin-right: 10px;
+  margin-left: 10px;
+  word-wrap: break-word;
+  padding: 0px;
+}
+
+.group
+{
+	padding: 8px;
+	margin-top: 30px;
+    margin-bottom: 30px;
+	border: 3px solid #07a9fc;
+	background-color: #dddddd;
+}
+
+.groupbutton ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.groupbutton li
+{
+	background-color: #0052af;
+	color:white;
+	height:40px;
+	justify-content: center;
+    align-items: center;
+	padding: 8px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+
+.groupbutton li:hover {
+    background-color: #07a9fc;
+}
+
+.groupinfo ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.groupinfo li
+{
+	height:40px;
+	justify-content: center;
+    align-items: center;
+	padding: 8px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+
+.groupinfo
+{
+	margin-top: 30px;
+}
+
 .flex-container-nav {
   display: flex;
   flex-direction: row;
@@ -190,6 +274,9 @@ tr:nth-child(even) {
   justify-content: center;
   margin: 5px;
 }
+
+span.gp {color:#6531BF}
+
 </style>
 </head>
 <body>
@@ -200,30 +287,32 @@ tr:nth-child(even) {
 		</a>
 	</div>
 	<div class="content desktop-5-cols phone-12-cols">
-		<h1>Startseite</h1>
+		<h1>Offene Anfragen</h1>
 	</div>
 	<div class="desktop-4-cols phone-12-cols">
     <div class="flex-container-nav">
       <div class="img-with-label">
-        <a href="content/help.html">
+        <a href="help.html">
           <img class="iconimg" src="../img/questionmark.png" href="content/help.html" alt="Hilfe">
         </a>
         <p class="img-label">Hilfe</p>
       </div>
       <div class="img-with-label">
-			  <a href="content/calendar.html">
+        <a href="calendar.html">
           <img class="iconimg" src="../img/calendar.png" href="content/calendar.html" alt="Kalendar">
         </a>
         <p class="img-label">Kalender</p>
       </div>
       <div class="img-with-label">
-        <a href="content/search01.html">
+        <a href="search01.html">
           <img class="iconimg" src="../img/suche.png" alt="Suchen">
         </a>
         <p class="img-label">Suche</p>
       </div>
       <div class="img-with-label">
-        <img class="iconimg" src="../img/einstellungen.png" alt="Einstellungen">
+        <a href="profile.html">
+				<img class="iconimg" src="../img/einstellungen.png" alt="Einstellungen">
+			  </a>
         <p class="img-label">Einstellungen</p>
       </div>
       <div class="img-with-label">
@@ -261,7 +350,7 @@ tr:nth-child(even) {
       <a href="calendar.html"style="text-decoration: none; ">
         <li>Termine</li>
       </a>
-		<a href="requests.html"style="text-decoration: none; ">
+	  <a href="requests.html"style="text-decoration: none; ">
 		<li>Offene Anfragen</li>
 	  </a>
 			<li>Vorschläge</li>
@@ -269,11 +358,48 @@ tr:nth-child(even) {
 		</ul>
     </div>
     
-    
-
-	<div class="content desktop-9-cols phone-12-cols">
-Content
+    <div class="content desktop-9-cols phone-12-cols">
+		<div class="flex-container">
+			<div class="group desktop-12-cols phone-12-cols">
+				<h3><span class="gp">Bruce Willis</span> möchte der Gruppe <span class="gp">Programmieren 1</span> beitreten:</h3>
+				<div class="flex-container-button">
+					<button class="btn-popup-red">
+						<p>Ignorieren</p>
+					</button>
+					<button class="btn-popup-green">
+						<p>Annehmen</p>
+					</button>
+					<button class="btn-popup-yellow">Profil ansehen</button>
+				</div>
+			</div>
+			<div class="group desktop-12-cols phone-12-cols">
+				<h3><span class="gp">Army1996</span> möchte der Gruppe <span class="gp">GMCI</span> beitreten:</h3>
+				<div class="flex-container-button">
+					<button class="btn-popup-red">
+						<p>Ignorieren</p>
+					</button>
+					<button class="btn-popup-green">
+						<p>Annehmen</p>
+					</button>
+					<button class="btn-popup-yellow">Profil ansehen</button>
+				</div>
+			</div>
+			<div class="group desktop-12-cols phone-12-cols">
+				<h3><span class="gp">Elena_H</span> möchte der Gruppe <span class="gp">GDS Übung</span> beitreten:</h3>
+				<div class="flex-container-button">
+					<button class="btn-popup-red">
+						<p>Ignorieren</p>
+					</button>
+					<button class="btn-popup-green">
+						<p>Annehmen</p>
+					</button>
+					<button class="btn-popup-yellow">Profil ansehen</button>
+				</div>
+			</div>
+		</div>
     </div>
+
+	
 
 </div>
 <script>
