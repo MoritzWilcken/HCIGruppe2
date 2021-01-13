@@ -307,7 +307,7 @@ tr:nth-child(even) {
       		Sind Sie sicher, dass Sie sich abmelden wollen? 
     	</p>
     	<div class="flex-container-button">
-    		<button class="btn-popup-red">
+    		<button id="btn-logoff" class="btn-popup-red">
         		<p>Abmelden</p>
       		</button>
       		<button class="btn-popup-green">
@@ -329,7 +329,7 @@ tr:nth-child(even) {
 				<li>Offene Anfragen</li>
 			</a>
 			<a href="recommendations.html"style="text-decoration: none; ">
-				<li>Vorschläge</li>
+				<li>Vorschlï¿½ge</li>
 			</a>
 			<li>Notizen</li>
 		</ul>
@@ -375,7 +375,13 @@ tr:nth-child(even) {
 	var btn_icon_logoff = document.getElementById("btn_logoff");
 
 	// Get the button 'cancel' element that closes the modal
-	var btn_cancel = document.getElementsByClassName("btn-popup-green")[0];
+  var btn_cancel = document.getElementsByClassName("btn-popup-green")[0];
+  
+  var btn_logoff = document.getElementById("btn-logoff");
+
+	btn_logoff.addEventListener("click", () => {
+  		window.location.href = "../login.html";
+	});
 
 	// When the user clicks the button, open the modal 
 	btn_icon_logoff.onclick = function() {

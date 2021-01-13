@@ -249,7 +249,7 @@ tr:nth-child(even) {
 .img-label {
   margin: 0px;
   padding: 0px;
-	color: #07a9fc;
+  color: #07a9fc;
   font-size: 10pt;
   text-align: center;
 }
@@ -466,7 +466,7 @@ output {
       		Sind Sie sicher, dass Sie sich abmelden wollen? 
     	</p>
     	<div class="flex-container-button">
-    		<button class="btn-popup-red">
+    		<button id="btn-logoff" class="btn-popup-red">
         		<p>Abmelden</p>
       		</button>
       		<button class="btn-popup-green">
@@ -608,7 +608,7 @@ output {
 						</td>
 					</tr>
 					<tr>
-						<td style="text-align: left;">Intressen:</td>
+						<td style="text-align: left;">Interessen:</td>
 						<td>
 							<textarea style="font-size: 12pt;width:100%;" cols="70" rows="20">Fußball, Sport, Programmieren, TableTop Spiele, KI-Systeme, Schach</textarea>
 						</td>
@@ -673,6 +673,12 @@ output {
 
 	// Get the button that opens the modal
 	var btn_icon_logoff = document.getElementById("btn_logoff");
+
+	var btn_logoff = document.getElementById("btn-logoff");
+
+	btn_logoff.addEventListener("click", () => {
+  		window.location.href = "../login.html";
+	});
 
 	// Get the button 'cancel' element that closes the modal
 	var btn_cancel = document.getElementsByClassName("btn-popup-green")[0];
