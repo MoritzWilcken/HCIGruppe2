@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+<style>
+
+
+* {
+    box-sizing: border-box; /* include margin, border, and padding in size */
+    font-family: 'Montserrat';
+}
+
+.flex-container {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap; /* Safari 6.1+ */
+    flex-wrap: wrap;
+}
+
+/* Phones: */
+.phone-12-cols {width: 100%;}
+
+/* Desktop: */
+@media only screen and (min-width: 750px) {
+    .desktop-1-cols {width: 8.33%;}
+    .desktop-2-cols {width: 16.66%;}
+    .desktop-3-cols {width: 25%;}
+    .desktop-4-cols {width: 33.33%;}
+    .desktop-5-cols {width: 41.66%;}
+    .desktop-6-cols {width: 50%;}
+    .desktop-7-cols {width: 58.33%;}
+    .desktop-8-cols {width: 66.66%;}
+    .desktop-9-cols {width: 75%;}
+    .desktop-10-cols {width: 83.33%;}
+    .desktop-11-cols {width: 91.66%;}
+    .desktop-12-cols {width: 100%;}
+}
+
+.logo {
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+
+
+.content {
+    padding-left: 20px;
+    padding-right: 20px;
+	text-align: center;
+	color: #07a9fc;
+}
+
+.menu li {
+    padding: 8px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    background-color: #0052af;
+    color: #f1f1f1;
+}
+
+.menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    font-size: 16pt;
+}
+
+.menu li:hover {
+    background-color: #07a9fc;
+}
+
+.logoimg {
+	max-height:100%
+}
+
+.iconimg {
+	max-height: 50px;
+  	max-width: 50px;
+  	display: block;
+ 	margin-left: auto;
+  	margin-right: auto;
+}
+
+
+.aside > div {
+    height: 50px;
+    padding: 8px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    background-color :#008000;
+    color: #f1f1f1;
+}
+
+table{
+	margin: 0 auto;
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+td, th {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 16px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+.content_table{
+	 margin-top: 6px;
+}
+
+.content_table li {
+    padding: 8px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    background-color: #0052af;
+    color: #f1f1f1;
+}
+
+.content_table ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.content_table li:hover {
+    background-color: #07a9fc;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  height: 170px;
+  padding: 20px;
+  border: 1px solid #888;
+}
+
+.message-popup {
+  text-align: center;
+}
+
+.flex-container-button {
+	display: flex;	
+	flex-direction: row-reverse;
+}
+
+.btn-popup-red {
+  background-color: #FF0000;
+  color: white;
+  font-size: 16px;
+  border: none;
+  width: 100px;
+  height: 50px;
+  margin-top: 5px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.btn-popup-green {
+  background-color: #3ADF00;
+  color: white;
+  font-size: 16px;
+  border: none;
+  width: 100px;
+  height: 50px;
+  margin-top: 5px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+
+.group
+{
+	padding: 8px;
+	margin-top: 30px;
+    margin-bottom: 30px;
+	border: 3px solid #07a9fc;
+}
+
+.groupbutton ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.groupbutton li
+{
+	background-color: #0052af;
+	color:white;
+	height:40px;
+	justify-content: center;
+    align-items: center;
+	padding: 8px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+
+.groupbutton li:hover {
+    background-color: #07a9fc;
+}
+
+.groupinfo ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.groupinfo li
+{
+	height:40px;
+	justify-content: center;
+    align-items: center;
+	padding: 8px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+
+.groupinfo
+{
+	margin-top: 30px;
+}
+
+.flex-container-nav {
+  display: flex;
+  flex-direction: row;
+}
+
+.img-label {
+  margin: 0px;
+  padding: 0px;
+  color: #07a9fc;
+  font-size: 10pt;
+  text-align: center;
+}
+
+
+.img-with-label {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 5px;
+}
+
+.toggle label {
+	position: relative;
+	display: inline-block;
+	width: 10em;
+	height: 3.5em;
+}
+
+.toggle input {
+	display: none;
+}
+
+.toggle .slider {
+	/* Grundfläche */
+	
+	position: absolute;
+	cursor: pointer;
+	top: 1.5em;
+	left: 2em;
+	width: 4em;
+	height: 2em;
+	background-color: #c32e04;
+	/* red */
+	
+	transition: all .3s ease-in-out;
+	border-radius: 1em;
+}
+
+.toggle .slider:before {
+	/* verschiebbarer Button */
+	
+	position: absolute;
+	content: "";
+	height: 1.6em;
+	width: 1.6em;
+	left: 0.2em;
+	bottom: 0.2em;
+	background-color: white;
+	border-radius: 50%;
+	transition: all .3s ease-in-out;
+}
+
+.toggle input:checked + .slider {
+	background-color: #5a9900;
+	/* green */
+}
+
+.toggle input:focus + .slider {
+	background-color: pink;
+	box-shadow: 0 0 1px #5a9900;
+}
+
+.toggle input:checked + .slider:before {
+	-webkit-transform: translateX(1.9em);
+	/* Android 4 */
+	
+	-ms-transform: translateX(1.9em);
+	/* IE9 */
+	
+	transform: translateX(1.9em);
+}
+
+.text .slider:after {
+	/* Text vor dem FlipFlop-Schalter */
+	
+	position: absolute;
+	content: "Nein";
+	color: #c32e04;
+	font-weight: bold;
+	height: 1.6em;
+	left: -3.0em;
+	bottom: 0.2em;
+}
+
+.text input:checked + .slider:after {
+	/* Text hinter dem FlipFlop-Schalter */
+	
+	position: absolute;
+	content: "Ja";
+	color: #5a9900;
+	left: 4.5em;
+}
+
+select {
+	display: block;
+	font-size: 1.0em;
+	padding: .6em 1.4em .5em .8em;
+	width: 20em;
+	max-width: 100%;
+	/* useful when width is set to anything other than 100% */
+	
+	box-sizing: border-box;
+	margin: 0;
+	border: 1px solid #aaa;
+	box-shadow: 0 1px 0 1px rgba(0, 0, 0, .04);
+	border-radius: .5em;
+	-webkit-appearance: none;
+	appearance: none;
+	background-color: transparent;
+	/* note: bg image below uses 2 urls. The first is an svg data uri for the arrow icon, and the second is the gradient. 
+        for the icon, if you want to change the color, be sure to use `%23` instead of `#`, since it's a url. You can also swap in a different svg icon or an external image reference
+    */
+	
+	background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'), linear-gradient(to bottom, #ffffff 0%, #e5e5e5 100%);
+	background-repeat: no-repeat, repeat;
+	/* arrow icon position (1em from the right, 50% vertical) , then gradient position*/
+	
+	background-position: right .7em top 50%, 0 0;
+	/* icon size, then gradient */
+	
+	background-size: .65em auto, 100%;
+}
+/* Hide arrow icon in IE browsers */
+
+select::-ms-expand {
+	display: none;
+}
+/* Hover style */
+
+select:hover {
+	border-color: #888;
+}
+
+select > *:hover {
+	background-color: #dfac20;
+}
+/* Focus style */
+
+select:focus {
+	border-color: #aaa;
+	/* It'd be nice to use -webkit-focus-ring-color here but it doesn't work on box-shadow */
+	
+	box-shadow: 0 0 1px 3px rgba(59, 153, 252, .7);
+	box-shadow: 0 0 0 3px -moz-mac-focusring;
+	color: #222;
+	outline: none;
+}
+/* Set options to normal weight */
+
+select option {
+	font-weight: normal;
+}
+
+output {
+	font-family: courier;
+	font-size: 2em;
+	color: #c32e04;
+}
+
+.info-slider {
+	margin: 0px;
+	padding: 0px;
+}
+
+.btn {
+    background: #0052af;
+    border: none;
+    padding: .5em 2em;
+    color: white;
+    margin: 10px;
+    margin-right: 20px;
+}
+
+.btn:hover {
+  background-color: #07a9fc;
+  color: white;
+}
+
+</style>
+
+</head>
+<body>
+<div class="flex-container">
+	<div class="logo desktop-3-cols phone-12-cols">	
+		<a style="height: 120px;" href="../index.html">
+			<img class="logoimg" src="../img/Logo2.png" alt="Logo Study Radar" ></img>
+		</a>
+	</div>
+	<div class="content desktop-5-cols phone-12-cols">
+		<h1>Einstellungen</h1>
+	</div>
+	<div class="desktop-4-cols phone-12-cols">
+		<div class="flex-container-nav">
+            <div class="img-with-label">
+              <a href="help.html">
+                <img class="iconimg" src="../img/questionmark.png" alt="Hilfe">
+              </a>
+              <p class="img-label">Hilfe</p>
+            </div>
+            <div class="img-with-label">
+			  <a href="calendar.html">
+				<img class="iconimg" src="../img/calendar.png" href="content/calendar.html" alt="Kalendar">
+			  </a>
+              <p class="img-label">Kalender</p>
+            </div>
+            <div class="img-with-label">
+              <a href="search01.html">
+                <img class="iconimg" src="../img/suche.png" alt="Suchen">
+              </a>
+              <p class="img-label">Suche</p>
+            </div>
+            <div class="img-with-label">
+				<a href="profile.html">
+				<img class="iconimg" src="../img/einstellungen.png" alt="Einstellungen">
+			  </a>
+              <p class="img-label">Einstellungen</p>
+            </div>
+            <div class="img-with-label">
+              <input id="btn_logoff" class="iconimg" type="image" src="../img/logofficon.png" alt="Abmelden">
+              <p class="img-label">Abmelden</p>
+            </div>
+          </div>
+    </div>
+</div>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+	<!-- Modal content -->
+  	<div class="modal-content desktop-4-cols phone-12-cols">
+    	<p class="content message-popup">
+      		Sind Sie sicher, dass Sie sich abmelden wollen? 
+    	</p>
+    	<div class="flex-container-button">
+    		<button id="btn-logoff" class="btn-popup-red">
+        		<p>Abmelden</p>
+      		</button>
+      		<button class="btn-popup-green">
+       			<p>Abbrechen</p>
+     		</button>
+    	</div>
+	</div>
+</div>
+
+
+<!-- The Modal -->
+<div id="groupModal" class="modal">
+
+	<!-- Modal content -->
+  	<div class="modal-content desktop-4-cols phone-12-cols">
+    	<p class="content message-popup">
+      		Möchten Sie die Lerngruppe beitreten?
+    	</p>
+    	<div class="flex-container-button">
+      		<button class="btn-popup-green" id="btn_okay">
+       			<p>Ja</p>
+			</button>
+			<button class="btn-popup-red" id="btn_cancel">
+        		<p>Nein</p>
+      		</button>
+    	</div>
+	</div>
+</div>
+
+<div class="flex-container">
+
+	<div class="menu desktop-3-cols phone-12-cols">        
+        <ul>
+			<a href="calendar.html"style="text-decoration: none; ">
+				<li>Termine</li>
+			</a>
+			<a href="requests.html"style="text-decoration: none; ">
+				<li>Offene Anfragen</li>
+			</a>
+			<a href="recommendations.html"style="text-decoration: none; ">
+				<li>Vorschläge</li>
+			</a>
+			<li>Notizen</li>
+		</ul>
+    </div>
+	
+	<div class="content desktop-9-cols phone-12-cols">
+		<div class="flex-container">
+			<div class="group desktop-12-cols phone-12-cols">
+				<h3>Profil</h3>
+			</div>
+			<div class="group desktop-12-cols phone-12-cols">
+				<table class="content_table">
+					<tr>
+						<td>Parameter</td>
+						<td>Value</td>
+					</tr>
+					<tr>
+						<td style="text-align: left;">Gruppenname:</td>
+						<td>
+							<input style="font-size: 12pt;height: 30px;width:100%;" type="text" value="HCI Miniprojektgruppe Studyradar"></input>
+						</td>
+                    </tr>
+                    <tr>
+						<td style="text-align: left;">Mitglieder:</td>
+						<td>
+							<textarea style="font-size: 12pt;width:100%;" cols="70" rows="6">Jan, Dennis, Oliver, Mohammad, Moritz</textarea>
+						</td>
+					</tr>
+                    <tr>
+						<td style="text-align: left;">Fächer:</td>
+						<td>
+							<textarea style="font-size: 12pt;width:100%;" cols="70" rows="6">HCI</textarea>
+						</td>
+                    </tr>
+                    <tr>
+						<td style="text-align: left;">Treffen:</td>
+						<td>
+							<textarea style="font-size: 12pt;width:100%;" cols="70" rows="6">Immer Montags um 10:00 Uhr auf Discord</textarea>
+						</td>
+                    </tr>
+                    <tr>
+						<td style="text-align: left;">Kontaktdetails:</td>
+						<td>
+                            <textarea style="font-size: 12pt;width:100%;" cols="70" rows="6">Discord: https://example.com&#13;Teamspeak (Ausweichplattform): https://example.com </textarea>
+						</td>
+                    </tr>
+                    <tr>
+						<td style="text-align: left;">Beschreibung</td>
+						<td>
+							<textarea style="font-size: 12pt;width:100%;" cols="70" rows="6">Wir sind eine Gruppe von Drittsemestler, die sich jede Woche treffen, um an das Miniprojekt Studyradar zu arbeiten.</textarea>
+						</td>
+					</tr>
+                    <!--
+					<tr>
+						<td style="text-align: left;">Passwort:</td>
+						<td>
+							<input style="font-size: 12pt;height: 30px;width:100%;" type="password" value="Rainer Zufall"></input>
+						</td>
+						<td>
+						</td>
+                    </tr>
+				-->
+				<tr>
+					<td style="text-align: left;">Sichtbarkeit</td>
+					<td>
+						<div class="flex-container" style="justify-content: space-between;">
+							<p style="margin: 27px;color:#222;">Gruppe öffentlich?</p>
+							<div class="toggle text" style="text-align: center">
+								<label>
+									<input id="checkbox1" type="checkbox"></input><span class="slider"></span>
+								</label>
+							</div>
+						</div>
+						<div class="flex-container" style="justify-content: space-between;">
+							<div style="margin: 27px; color:#222;">Nur über Einladung?</div>
+							<div class="toggle text">
+								<label>
+									<input id="checkbox2" type="checkbox"></input><span class="slider"></span>
+								</label>
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr id="password-field" style="visibility: hidden;">
+					<td style="text-align: left;">Passwort:</td>
+					<td>
+						<input style="font-size: 12pt;height: 30px;width:100%;" type="password" value="Rainer Zufall"></input>
+					</td>
+					<td>
+					</td>
+				</tr>	
+				<tr>
+					<td></td>
+					<td style="text-align: left">
+						<button class="btn">Gruppe erstellen</button>
+                		<button class="btn">Abbrechen</button>
+					</td>
+				</tr>			
+			   </table>
+			</div>
+		</div>
+    </div>
+
+</div>
+<script>
+	function goToGroup()
+	{
+		groupModal.style.display = "flex";
+	}
+	
+	// Get the modal
+	var groupModal = document.getElementById("groupModal");
+
+	// Get the button that opens the modal
+	var btn_okay = document.getElementById("btn_okay");
+
+	// Get the button 'cancel' element that closes the modal
+	var btn_cancel = document.getElementById("btn_cancel");
+
+	// When the user clicks the button, open the modal 
+	btn_okay.onclick = function() {
+  		window.location.href = 'detailgroup02.html'
+	}
+	
+	// When the user clicks on button 'cancel', close the modal
+	btn_cancel.onclick = function() {
+  		groupModal.style.display = "none";
+	}
+
+	// When the user clicks anywhere outside of the modal, close it
+	window.onclick = function(event) {
+  		if (event.target == groupModal) {
+    		groupModal.style.display = "none";
+  		}
+	}
+	
+	var checkbox1 = document.getElementById("checkbox1");
+	checkbox1.checked = true;
+	var checkbox2 = document.getElementById("checkbox2");
+	checkbox2.checked = false;
+
+	var password_field = document.getElementById("password-field");
+
+	checkbox1.addEventListener("click",() => {
+		if (this.checkbox1.checked == true) {
+			this.checkbox2.checked = false;
+		}
+		hiddenHandler();
+	});
+
+	checkbox2.addEventListener("click",() => {
+		if (this.checkbox2.checked == true) {
+			this.checkbox1.checked = false;
+		}
+		hiddenHandler();
+	});
+
+	function hiddenHandler() {
+		if(this.checkbox2.checked == false && this.checkbox1.checked == false) {
+			password_field.style.visibility = "visible";
+		} else {
+			password_field.style.visibility = "hidden";
+		}
+	}
+
+	// Get the modal
+	var modal = document.getElementById("myModal");
+
+	// Get the button that opens the modal
+	var btn_icon_logoff = document.getElementById("btn_logoff");
+
+	var btn_logoff = document.getElementById("btn-logoff");
+
+	btn_logoff.addEventListener("click", () => {
+  		window.location.href = "../login.html";
+	});
+
+	// Get the button 'cancel' element that closes the modal
+	var btn_cancel = document.getElementsByClassName("btn-popup-green")[0];
+
+	// When the user clicks the button, open the modal 
+	btn_icon_logoff.onclick = function() {
+  		modal.style.display = "flex";
+	}
+
+	// When the user clicks on button 'cancel', close the modal
+	btn_cancel.onclick = function() {
+  		modal.style.display = "none";
+	}
+
+	// When the user clicks anywhere outside of the modal, close it
+	window.onclick = function(event) {
+  		if (event.target == modal) {
+    		modal.style.display = "none";
+  		}
+	}
+</script>
+</body>
+</html>
